@@ -1,8 +1,8 @@
-import './App.css'
+import './index.css'
 
 export default function App() {
   return (
-    <h1>Remote app</h1>
+    <h1 className='text-4xl bg-red-500'>Hello World</h1>
   )
 }
 
