@@ -10,6 +10,7 @@ export function Header() {
         <img
           alt="Logotipo da Teddy Open Finance. O texto 'Teddy' em preto com um pequeno contorno laranja contendo a letra 'T' inicial. Abaixo está escrito 'OPEN FINANCE' em letras menores."
           src={logoTeddy}
+          className='md:w-[100px] md:h-[49px] w-[70px] h-[35px]'
         />
 
         <nav className="hidden md:flex flex-row items-center space-x-[33px]">
