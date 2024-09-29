@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 
 export function Header() {
   return (
-    <header className="flex h-20 shrink-0 items-center md:px-6 px-5 w-full py-[18px] bg-white shadow-[0px_2px_2px_0px_rgba(0,_0,_0,_0.1)]">
+    <header className="flex items-center px-5 w-full py-[18px] bg-white shadow-[0px_2px_2px_0px_rgba(0,_0,_0,_0.1)]">
       <div className="w-full max-w-[1200px] flex flex-row mx-auto justify-between items-center relative">
         <img
           alt="Logotipo da Teddy Open Finance. O texto 'Teddy' em preto com um pequeno contorno laranja contendo a letra 'T' inicial. Abaixo está escrito 'OPEN FINANCE' em letras menores."
