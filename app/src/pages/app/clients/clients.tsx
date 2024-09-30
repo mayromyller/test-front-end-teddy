@@ -3,6 +3,8 @@ import { ClientCard } from './components/client-card'
 import { CustomPagination } from './components/client-pagination'
 import { ClientSelect } from './components/client-select'
 import { Button } from '@/components/ui/button'
+import { Dialog, DialogTrigger } from '@/components/ui/dialog'
+import { ClientDialog } from './components/client-dialog'
 
 export function Clients() {
   const [currentPage, setCurrentPage] = useState<number>(1)
@@ -29,15 +31,37 @@ export function Clients() {
       <section className="mt-[10px]">
         <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-4">
           {Array.from({ length: 16 }, (_, i) => (
-            <ClientCard key={i} />
+            <ClientCard key={i}
+              name='Teddy'
+              salary={(Math.random() * 100).toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+              })}
+              companyValue={(Math.random() * 100).toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+              })}
+            />
           ))}
         </div>
       </section>
 
       <footer className="mt-5 space-y-5">
-          <Button variant="orange_outline" className='h-[40px] w-full text-sm'>
-            Criar cliente
-          </Button>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button
+              variant="orange_outline"
+              className="h-[40px] w-full text-sm"
+            >
+              Criar cliente
+            </Button>
+          </DialogTrigger>
+          <ClientDialog />
+        </Dialog>
 
         <CustomPagination
           currentPage={currentPage}
