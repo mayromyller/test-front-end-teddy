@@ -23,7 +23,14 @@ export default defineConfig({
     cssCodeSplit: false
   },
   server: {
-    port: 3001
+    port: 3001,
+    proxy: {
+      '/api': {
+        target: 'https://boasorte.teddybackoffice.com.br/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
   },
   preview: {
     port: 3001,
