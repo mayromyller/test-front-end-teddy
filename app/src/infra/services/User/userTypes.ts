@@ -21,3 +21,7 @@ export interface UserListClientParams {
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface CreateClientParams
   extends Omit<ClientItem, 'id' | 'createdAt' | 'updatedAt'> {}
+
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+export interface UpdateClientParams
+  extends Omit<ClientItem, 'createdAt' | 'updatedAt'> {}
