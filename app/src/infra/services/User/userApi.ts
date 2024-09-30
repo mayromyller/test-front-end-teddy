@@ -42,8 +42,15 @@ async function updateClient({
   return response.data
 }
 
+async function deleteClient(id: number) {
+  const response = await api.delete(`/users/${id}`)
+
+  return response.data
+}
+
 export const userApi = {
   getClients,
   createClient,
-  updateClient
+  updateClient,
+  deleteClient
 }
