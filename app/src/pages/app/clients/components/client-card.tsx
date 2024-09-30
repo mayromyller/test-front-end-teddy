@@ -10,20 +10,29 @@ import {
 } from '@/components/ui/dialog'
 import { Trash2, Plus, Pencil } from 'lucide-react'
 import { ClientDialog } from './client-dialog'
+import { moneyFormatter } from '@/utils/moneyFormatter'
 
 export interface ClientDetailsProps {
-  name?: string
-  salary?: number | string
-  companyValue?: number | string
+  id: number
+  name: string
+  salary: number
+  companyValuation: number
 }
 
-export function ClientCard({ name, salary, companyValue }: ClientDetailsProps) {
+export function ClientCard({
+  id,
+  name,
+  salary,
+  companyValuation
+}: ClientDetailsProps) {
   return (
     <Card className="p-[15px] md:max-w-[285px]">
       <CardTitle className="text-center">{name}</CardTitle>
       <CardContent className="text-center mt-[10px] gap-[10px]">
-        <p className="text-wrap truncate">Salário: {salary}</p>
-        <p className="text-wrap truncate">Empresa: {companyValue}</p>
+        <p className="text-wrap truncate">Salário: {moneyFormatter(salary)}</p>
+        <p className="text-wrap truncate">
+          Empresa: {moneyFormatter(companyValuation)}
+        </p>
       </CardContent>
 
       <CardFooter className="flex flex-row items-center justify-between p-0">
@@ -37,7 +46,13 @@ export function ClientCard({ name, salary, companyValue }: ClientDetailsProps) {
               <Pencil className="h-4 w-4 stroke-black" />
             </Button>
           </DialogTrigger>
-          <ClientDialog name={name} salary={salary} companyValue={companyValue} />
+          <ClientDialog
+            id={id}
+            name={name}
+            salary={salary}
+            companyValuation={companyValuation}
+            isEditing
+          />
         </Dialog>
 
         <Dialog>
@@ -46,6 +61,7 @@ export function ClientCard({ name, salary, companyValue }: ClientDetailsProps) {
               <Trash2 className="h-4 w-4 stroke-[#FF0000]" />
             </Button>
           </DialogTrigger>
+
           <DialogContent>
             <DialogHeader>
               <DialogTitle>Excluir cliente:</DialogTitle>

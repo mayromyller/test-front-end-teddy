@@ -73,22 +73,10 @@ export function Clients() {
             data.clients.map((clientItem) => (
               <ClientCard
                 key={clientItem.id}
+                id={clientItem.id}
                 name={clientItem.name}
-                salary={clientItem.salary.toLocaleString('pt-BR', {
-                  style: 'currency',
-                  currency: 'BRL',
-                  minimumFractionDigits: 2,
-                  maximumFractionDigits: 2
-                })}
-                companyValue={clientItem.companyValuation.toLocaleString(
-                  'pt-BR',
-                  {
-                    style: 'currency',
-                    currency: 'BRL',
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2
-                  }
-                )}
+                salary={clientItem.salary}
+                companyValuation={clientItem.companyValuation}
               />
             ))
           )}
