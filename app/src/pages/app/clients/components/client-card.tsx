@@ -1,3 +1,6 @@
+import { toast } from 'sonner'
+import { Trash2, Plus, Pencil } from 'lucide-react'
+
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter, CardTitle } from '@/components/ui/card'
 import {
@@ -8,9 +11,9 @@ import {
   DialogTitle,
   DialogTrigger
 } from '@/components/ui/dialog'
-import { Trash2, Plus, Pencil } from 'lucide-react'
 import { ClientDialog } from './client-dialog'
 import { moneyFormatter } from '@/utils/moneyFormatter'
+import { useUserDeleteClient } from '@/infra/services/User/http-state/useUserDeleteClient'
 
 export interface ClientDetailsProps {
   id: number
@@ -25,6 +28,19 @@ export function ClientCard({
   salary,
   companyValuation
 }: ClientDetailsProps) {
+  const { mutateAsync } = useUserDeleteClient({
+    onSuccess: () => {
+      toast.success('Cliente excluído com sucesso')
+    },
+    onError: (message) => {
+      toast.error(message)
+    }
+  })
+
+  async function handleDeleteClient() {
+    await mutateAsync(id)
+  }
+
   return (
     <Card className="p-[15px] md:max-w-[285px]">
       <CardTitle className="text-center">{name}</CardTitle>
@@ -70,9 +86,15 @@ export function ClientCard({
               </p>
             </DialogHeader>
             <DialogFooter>
-              <Button variant="orange" className="h-[40x] w-full rounded-sm">
-                Excluir cliente
-              </Button>
+              <DialogTrigger asChild>
+                <Button
+                  variant="orange"
+                  className="h-[40x] w-full rounded-sm"
+                  onClick={handleDeleteClient}
+                >
+                  Excluir cliente
+                </Button>
+              </DialogTrigger>
             </DialogFooter>
           </DialogContent>
         </Dialog>
