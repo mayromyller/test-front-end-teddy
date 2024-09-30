@@ -25,6 +25,7 @@ import {
 } from '@/components/ui/form'
 import { MaskedInput } from '@/components/app-components/masked-input'
 import { useUserCreateClient } from '@/infra/services/User/http-state/useUserCreteClient'
+import { useUserUpdateClient } from '@/infra/services/User/http-state/useUserUpdateClient'
 import { toast } from 'sonner'
 
 interface ClientDialogProps extends Partial<ClientDetailsProps> {
@@ -61,6 +62,16 @@ export function ClientDialog({
     }
   })
 
+  const { mutateAsync: updateClient } = useUserUpdateClient({
+    onSuccess: () => {
+      toast.success('Cliente atualizado com sucesso')
+    },
+    onError: (message) => {
+      toast.error(message)
+      form.reset()
+    }
+  })
+
   async function handleCreateClient(data: CreateClientSchema) {
     await createClient(data)
 
@@ -68,9 +79,14 @@ export function ClientDialog({
   }
 
   async function handleUpdateClient(data: CreateClientSchema) {
-    console.log(data, id)
-    // TODO: implementar a atualização do cliente
-    form.reset()
+    if (id) {
+      await updateClient({
+        id,
+        name: data.name,
+        salary: data.salary,
+        companyValuation: data.companyValuation
+      })
+    }
   }
 
   const handleSubmitForm = isEditing ? handleUpdateClient : handleCreateClient

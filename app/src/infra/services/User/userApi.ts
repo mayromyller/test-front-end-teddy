@@ -3,6 +3,7 @@ import {
   ClientItem,
   Clients,
   CreateClientParams,
+  UpdateClientParams,
   UserListClientParams
 } from './userTypes'
 
@@ -26,7 +27,23 @@ async function createClient({
   return response.data
 }
 
+async function updateClient({
+  id,
+  name,
+  salary,
+  companyValuation
+}: UpdateClientParams) {
+  const response = await api.patch<ClientItem>(`/use/${id}`, {
+    name,
+    salary,
+    companyValuation
+  })
+
+  return response.data
+}
+
 export const userApi = {
   getClients,
-  createClient
+  createClient,
+  updateClient
 }
