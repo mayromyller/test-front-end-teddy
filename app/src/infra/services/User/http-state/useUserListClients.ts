@@ -10,7 +10,8 @@ export function useUserListClients({ page, limit }: UserListClientParams) {
     queryKey: [QueryKeys.UserListClient, page, limit],
     queryFn: () => userApi.getClients({ page, limit }),
     placeholderData: keepPreviousData,
-    retry: false
+    retry: false,
+    staleTime: Infinity
   })
 
   return query
