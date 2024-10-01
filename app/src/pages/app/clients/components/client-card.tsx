@@ -62,7 +62,10 @@ export function ClientCard({
   }
 
   return (
-    <Card className="p-[15px] md:max-w-[285px]">
+    <Card
+      className="p-[15px] md:max-w-[285px]"
+      data-testid={`client-card-${id}`}
+    >
       <CardTitle className="text-center">{name}</CardTitle>
       <CardContent className="text-center mt-[10px] gap-[10px]">
         <p className="text-wrap truncate">Salário: {moneyFormatter(salary)}</p>
