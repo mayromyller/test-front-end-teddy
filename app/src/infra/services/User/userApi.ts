@@ -33,7 +33,7 @@ async function updateClient({
   salary,
   companyValuation
 }: UpdateClientParams) {
-  const response = await api.patch<ClientItem>(`/use/${id}`, {
+  const response = await api.patch<ClientItem>(`/users/${id}`, {
     name,
     salary,
     companyValuation
