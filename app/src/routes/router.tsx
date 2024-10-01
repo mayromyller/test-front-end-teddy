@@ -1,7 +1,10 @@
-import { Clients } from '@/pages/app/clients/clients'
-import { Session } from '@/pages/auth/session'
+import { createBrowserRouter } from 'react-router-dom'
+
 import { AppLayout } from '@/pages/layouts/app-layout'
-import {createBrowserRouter} from 'react-router-dom'
+
+import { Session } from '@/pages/auth/session'
+import { Clients } from '@/pages/app/clients/clients'
+import { ClientsSelected } from '@/pages/app/clients-selected/clientes-selected'
 
 export const router = createBrowserRouter([
   {
@@ -18,7 +21,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/selected-clients',
-        element: <div>Clientes selecionados</div>
+        element: <ClientsSelected />
       }
     ]
   }
