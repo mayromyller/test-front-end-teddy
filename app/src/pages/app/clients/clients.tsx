@@ -30,7 +30,7 @@ export function Clients() {
     setClientsPerPage(perPage)
   }
 
-  const handlePageChange = (newPage: number): void => {
+  function handlePageChange(newPage: number): void {
     setCurrentPage(newPage)
   }
 
