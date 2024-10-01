@@ -43,12 +43,12 @@ pnpm install
 
 Você pode navegar até a pasta app e executar `pnpm dev` e abrir o app na url `http://localhost:3001/` ou executar dentro da pasta container `pnpm dev` e abrir o app na url `http://localhost:3000/`.
 
-Instalando o projeto usando Docker:
+### Instalando o projeto usando Docker:
 
 Após fazer clone do repositório, navegue até a pasta do projeto e execute o comando abaixo:
 
 ```
-docker-compose up
+docker compose up --build
 ```
 
 A aplicação rodará em `http://localhost:3000/`.
