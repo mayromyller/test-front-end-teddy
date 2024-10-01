@@ -3,6 +3,10 @@
     {
       "source": "/api/:path*",
       "destination": "https://boasorte.teddybackoffice.com.br/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
