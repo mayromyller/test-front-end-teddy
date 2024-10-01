@@ -11,6 +11,11 @@ export default defineConfig({
     alias: {
       '@/': new URL('./src/', import.meta.url).pathname
     },
+    exclude: [
+      // exclude .spec.ts files
+      ...configDefaults.exclude,
+      '**/*.spec.ts'
+    ],
     coverage: {
       provider: 'v8',
       include: ['src/**/*.{js,ts,tsx}'],
