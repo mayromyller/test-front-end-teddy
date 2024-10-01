@@ -105,7 +105,7 @@ export function ClientCard({
                   <DialogTitle>Excluir cliente:</DialogTitle>
                   <p>
                     Você está prestes a excluir o cliente:{' '}
-                    <strong>Teddy</strong>
+                    <strong>{name}</strong>
                   </p>
                 </DialogHeader>
                 <DialogFooter>
