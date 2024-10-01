@@ -4,7 +4,7 @@ import { AppLayout } from '@/pages/layouts/app-layout'
 
 import { Session } from '@/pages/auth/session'
 import { Clients } from '@/pages/app/clients/clients'
-import { ClientsSelected } from '@/pages/app/clients-selected/clientes-selected'
+import { ClientsSelected } from '@/pages/app/clients-selected/clients-selected'
 
 export const router = createBrowserRouter([
   {
