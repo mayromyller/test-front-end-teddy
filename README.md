@@ -57,19 +57,19 @@ A aplicação rodará em `http://localhost:3000/`.
 
 Abaixo estão as principais tecnologias utilizadas neste projeto:
 
-- \*\*[React](https://reactjs.org/)
-- \*\*[Vite](https://vitejs.dev/)
-- \*\*[TypeScript](https://www.typescriptlang.org/)
-- \*\*[Zustand](https://github.com/pmndrs/zustand)
-- \*\*[React Query](https://tanstack.com/query/latest)
-- \*\*[Tailwind CSS](https://tailwindcss.com/)
-- \*\*[Vitest](https://vitest.dev/)
-- \*\*[Playwright](https://playwright.dev/)
-- \*\*[Axios](https://axios-http.com/)
-- \*\*[React Hook Form](https://react-hook-form.com/)
-- \*\*[ESLint](https://eslint.org/)
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Zustand](https://github.com/pmndrs/zustand)
+- [React Query](https://tanstack.com/query/latest)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vitest](https://vitest.dev/)
+- [Playwright](https://playwright.dev/)
+- [Axios](https://axios-http.com/)
+- [React Hook Form](https://react-hook-form.com/)
+- [ESLint](https://eslint.org/)
 - **[Module Federation](https://webpack.js.org/concepts/module-federation/)** (via Vite Plugin).
-- \*\*[Zod](https://zod.dev/)
+- [Zod](https://zod.dev/)
 
 ## Scripts Disponíveis
 
@@ -87,7 +87,7 @@ Aqui estão alguns scripts importantes para execução e desenvolvimento do proj
 
 Nesse projeto, utilizei um abordagem e arquitetura similar a do MVP (Model-View-Presenter), onde eu isolo toda a logica de negócio e integração à API de forma com que a UI, não conheça a lógica de negócio, e vice-versa.
 
-Faço isso com a utilização de hooks customizados delimitando as fronteiras entre UI e lógica de negócio, com a utilização do Tanstack Query (React Query) para lidar com requisições e estados assíncronos.
+Faço isso com a utilização de hooks customizados delimitando as fronteiras entre UI e lógica de negócio, com a utilização do Tanstack Query (React Query) para lidar com requisições e estados assíncronos, trazendo uma camada de cache para melhorar a performance do aplicativo.
 
 ---
 
