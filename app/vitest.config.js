@@ -1,5 +1,5 @@
 /// <reference types="vitest" />
-import { defineConfig } from 'vitest/config'
+import { defineConfig, configDefaults } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
@@ -10,6 +10,16 @@ export default defineConfig({
     environment: 'happy-dom',
     alias: {
       '@/': new URL('./src/', import.meta.url).pathname
+    },
+    coverage: {
+      provider: 'v8',
+      include: ['src/**/*.{js,ts,tsx}'],
+      exclude: [
+        ...configDefaults.exclude,
+        'src/test/**/*.{js,ts,tsx}',
+        'src/api/**/*.{js,ts,tsx}',
+        'src/**/__test__/**/*.{js,ts,tsx}'
+      ]
     }
   }
 })
