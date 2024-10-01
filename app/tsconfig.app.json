@@ -22,10 +22,11 @@
 
     /* Alias path */
     "baseUrl": ".",
-      "paths": {
-        "@/*": ["./src/*"]
-    }
+    "paths": {
+      "@/*": ["./src/*"]
+    },
 
+    "types": ["vitest/globals"]
   },
   "include": ["src"]
 }
