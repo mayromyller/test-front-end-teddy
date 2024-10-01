@@ -4,8 +4,6 @@ O sistema tem uma tela inicial onde o usuário pode inserir o nome e, em seguida
 
 ## Apresentação
 
-<div style="padding:56.23% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1015022372?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Apresentação da solução para o Teste Front-End Teddy - Pleno"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-
 Link para o vídeo: [Vídeo](https://vimeo.com/1015022372?share=copy#t=0)
 
 ## Pré-requisitos
